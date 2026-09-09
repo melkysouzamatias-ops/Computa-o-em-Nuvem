@@ -63,10 +63,6 @@ Traceback (most recent call last):
 OSError: [Errno 98] Address already in use
 root@ubuntu:~# curl localhost:8080
 <h1>Computacao em Nuvem</h1>
-
-PERGUNTAS E RESPOSTAS:
-
-1-
 root@ubuntu:~# hostname
 ubuntu
 root@ubuntu:~# hostname -I
