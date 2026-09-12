@@ -1,0 +1,32 @@
+DESAFIO FINAL:
+
++------------------------------------+        +------------------------------------+
+|           NUVEM PRIVADA            |        |           NUVEM PÚBLICA            |
+| (Infraestrutura Dedicada / On-Prem)|        |   (AWS, Azure, Google Cloud, etc.) |
+|                                    |        |                                    |
+|  [ Banco de Dados Principal ]      |        |  [ Aplicação Web / Frontend ]      |
+|  [ Dados Sensíveis / ERP / CRM ]   |        |  [ Processamento elástico / BI ]   |
+|                                    |        |                                    |
++-----------------+------------------+        +-----------------+------------------+
+                  |                                             |
+                  +------------- VPN / Direct Connect ----------+
+
+Divisão dos Sistemas e Justificativas
+Nuvem Privada (Controle, Segurança e Conformidade)
+
+Sistemas: Banco de Dados central, ERP, dados financeiros ou sensíveis (LGPD).
+
+Por quê: O ambiente é de uso exclusivo da organização, garantindo maior controle sobre a infraestrutura, compliance e isolamento de dados críticos.
+
+Nuvem Pública (Escalabilidade, Flexibilidade e Custo)
+
+Sistemas: Frontend da aplicação web/mobile, servidores web para picos de tráfego, ambientes de teste e analytics.
+
+Por quê: Os recursos são compartilhados e disponibilizados sob demanda por um provedor público, permitindo absorver variações de acesso (elasticidade) sem precisar investir em hardware próprio.
+
+A Conexão Híbrida (A Integração)
+
+Componente: VPN dedicada ou Direct Connect.
+
+Por quê: O que define a Nuvem Híbrida não é apenas ter dois ambientes, mas sim a interconexão e orquestração entre eles, permitindo que a aplicação na nuvem pública consulte o banco de dados na nuvem privada em tempo real.
+
