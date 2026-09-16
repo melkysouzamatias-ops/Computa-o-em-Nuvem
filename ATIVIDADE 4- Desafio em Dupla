@@ -1,0 +1,48 @@
+root@ubuntu:~$ docker run -d --name desafio-aula4 -p 8081:80 nginx:alpine
+7627fb39bf0abc90e39f02235902043d3eefa6b41cdeb6745ab5a6ddab871add
+root@ubuntu:~$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                     NAMES
+7627fb39bf0a   nginx:alpine   "/docker-entrypoint.…"   15 seconds ago   Up 15 seconds   0.0.0.0:8081->80/tcp, [::]:8081->80/tcp   desafio-aula4
+root@ubuntu:~$ curl localhost:8081
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, nginx is successfully installed and working.
+Further configuration is required for the web server, reverse proxy, 
+API gateway, load balancer, content cache, or other features.</p>
+
+<p>For online documentation and support please refer to
+<a href="https://nginx.org/">nginx.org</a>.<br/>
+To engage with the community please visit
+<a href="https://community.nginx.org/">community.nginx.org</a>.<br/>
+For enterprise grade support, professional services, additional 
+security features and capabilities please refer to
+<a href="https://f5.com/nginx">f5.com/nginx</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+root@ubuntu:~$ docker stop desafio-aula4
+desafio-aula4
+root@ubuntu:~$ docker rm desafio-aula4
+desafio-aula4
+
+RESPOSTAS:
+
+1. Qual é a principal diferença entre uma máquina virtual e um contêiner?
+A máquina virtual (VM) virtualiza o hardware completo e roda um sistema operacional próprio e independente. O contêiner virtualiza apenas o sistema operacional, compartilhando o mesmo kernel do sistema hospedeiro, o que o torna muito mais leve e rápido.
+
+2. Qual é a diferença entre uma imagem Docker e um contêiner?
+A imagem Docker é o modelo estático (somente leitura) que contém todo o código, bibliotecas e configurações necessárias para rodar uma aplicação. O contêiner é a instância em execução dessa imagem (o processo ativo rodando em memória).
+
+3. Por que contêineres são interessantes em ambientes de nuvem?
+Eles garantem portabilidade (o código roda igual em qualquer lugar), eficiência de recursos (ocupam menos CPU e RAM) e escalabilidade rápida (podem ser iniciados e destruídos em segundos para acompanhar a variação do tráfego).
